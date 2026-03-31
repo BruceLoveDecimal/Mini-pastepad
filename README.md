@@ -7,9 +7,18 @@
 - 常驻在 macOS 菜单栏
 - 监听剪贴板文本变化
 - 保存历史记录到本地 `UserDefaults`
-- 点击菜单栏图标展示下拉菜单
+- 点击菜单栏图标展示剪贴板面板
 - 点击历史项后重新复制到剪贴板
 - 连续复制相同文本时自动去重
+
+## v0.1 键盘能力
+
+- 全局快捷键 `Command + Shift + V`：打开或关闭剪贴板面板
+- `Up / Down`：切换历史项
+- `Enter`：重新复制当前项并关闭面板
+- `Command + F` 或直接输入：进入搜索
+- `Delete`：删除当前项
+- `Esc`：关闭面板
 
 ## 项目结构
 
@@ -17,7 +26,9 @@
 - `Sources/main.swift`：应用入口
 - `Sources/ClipboardMonitor.swift`：剪贴板监听
 - `Sources/ClipboardHistoryStore.swift`：历史记录持久化
-- `Sources/StatusBarController.swift`：状态栏和下拉菜单
+- `Sources/StatusBarController.swift`：状态栏入口
+- `Sources/ClipboardPanelController.swift`：剪贴板面板和键盘交互
+- `Sources/GlobalHotKeyManager.swift`：全局快捷键注册
 
 ## 运行方式
 
@@ -41,4 +52,4 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer ./scripts/build_app.sh
 生成结果：
 
 - `dist/MiniPasteboard.app`
-- `dist/MiniPasteboard-v0.0-macos.zip`
+- `dist/MiniPasteboard-v0.1-macos.zip`

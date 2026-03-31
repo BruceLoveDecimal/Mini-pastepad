@@ -39,6 +39,11 @@ final class ClipboardHistoryStore {
         save()
     }
 
+    func removeItem(withID id: UUID) {
+        items.removeAll { $0.id == id }
+        save()
+    }
+
     private func load() {
         guard let data = UserDefaults.standard.data(forKey: storageKey) else {
             return
